@@ -6,7 +6,8 @@ import java.util.List;
 public class InputValidator {
 
     public static List<String> validateNameInput(String input) {
-        ValidatorUtils.validateLength(input);
-        return Arrays.asList(input.split(","));
+        List<String> names = Arrays.asList(input.split(","));
+        names.forEach(ValidatorUtils::validateLength);
+        return names;
     }
 }
