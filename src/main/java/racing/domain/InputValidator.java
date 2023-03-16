@@ -10,4 +10,8 @@ public class InputValidator {
         names.forEach(ValidatorUtils::validateLength);
         return names;
     }
+
+    public static Integer validateRoundInput(String input) {
+        return Integer.parseInt(input);
+    }
 }

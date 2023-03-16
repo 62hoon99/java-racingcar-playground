@@ -21,4 +21,21 @@ public class InputValidatorTest {
         Assertions.assertThatThrownBy(() -> InputValidator.validateNameInput(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    public void 라운드_입력값_숫자로_반환() throws Exception {
+        //when
+        String input = "5";
+        //then
+        Assertions.assertThat(InputValidator.validateRoundInput(input)).isEqualTo(5);
+    }
+
+    @Test
+    public void 라운드_입력값_문자일경우_예외_발생() throws Exception {
+        //when
+        String input = "d";
+        //then
+        Assertions.assertThatThrownBy(() -> InputValidator.validateRoundInput(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
