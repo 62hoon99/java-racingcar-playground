@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Position {
 
-    private int position;
+    private final int position;
 
     public Position(int position) {
         this.position = position;
     }
 
-    public void moveForward() {
-        position++;
+    public Position moveForward() {
+        return new Position(position + 1);
     }
 
     @Override
@@ -26,4 +26,13 @@ public class Position {
     public int hashCode() {
         return Objects.hash(position);
     }
+
+    public boolean isLessThan(Position position) {
+        return position.isBiggerThan(this.position);
+    }
+
+    private boolean isBiggerThan(int position) {
+        return this.position > position;
+    }
+
 }

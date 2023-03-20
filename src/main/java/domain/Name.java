@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Name {
@@ -8,6 +10,15 @@ public class Name {
 
     public Name(String name) {
         this.name = name;
+    }
+
+    public static List<String> splitNames(String names) {
+        return Arrays.asList(names.split(","));
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
     @Override
