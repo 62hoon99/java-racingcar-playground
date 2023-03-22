@@ -11,4 +11,11 @@ public class NameTest {
         Assertions.assertThatThrownBy(() -> new Name("gromit"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    public void 이름이_0자_이면_예외_발생() {
+        //then
+        Assertions.assertThatThrownBy(() -> new Name("    "))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
