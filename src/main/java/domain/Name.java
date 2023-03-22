@@ -6,10 +6,18 @@ import java.util.Objects;
 
 public class Name {
 
+    private static final Integer MAX_LENGTH = 4;
     private final String name;
 
     public Name(String name) {
+        validateLength(name);
         this.name = name;
+    }
+
+    private void validateLength(String name) {
+        if (name.length() > MAX_LENGTH) {
+            throw new IllegalArgumentException("이름은 " + MAX_LENGTH + "보다 길면 안됩니다.");
+        }
     }
 
     public static List<String> splitNames(String names) {
