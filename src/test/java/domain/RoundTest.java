@@ -16,15 +16,5 @@ public class RoundTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
-    @Test
-    public void 라운드를_모두_진행하면_우승자를_반환한다() {
-        //given
-        Cars cars = new Cars("pobi,crong,honux");
-        Round round = new Round("5");
-        //when
-        List<String> winners = round.start(cars, () -> 4);
-        //then
-        assertThat(winners).contains("pobi", "crong", "honux");
 
-    }
 }

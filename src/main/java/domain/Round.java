@@ -14,10 +14,4 @@ public class Round {
         }
     }
 
-    public List<String> start(Cars cars, RandomGenerator randomGenerator) {
-        for (int i = 0; i < round; i++) {
-            cars.move(randomGenerator);
-        }
-        return cars.winners();
-    }
 }
