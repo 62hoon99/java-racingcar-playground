@@ -16,7 +16,11 @@ public class Cars {
     }
 
     public void move(RandomGenerator randomGenerator) {
-        cars.forEach(car -> car.move(randomGenerator.get()));
+        for (Car car : cars) {
+            car.move(randomGenerator.get());
+            System.out.println(car);
+        }
+        System.out.println();
     }
 
     public List<String> winners() {

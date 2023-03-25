@@ -31,6 +31,10 @@ public class Position {
         return position.isBiggerThan(this.position);
     }
 
+    public boolean isLessThan(int num) {
+        return position > num;
+    }
+
     private boolean isBiggerThan(int position) {
         return this.position > position;
     }
