@@ -16,5 +16,13 @@ public class RoundTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
-
+    @Test
+    public void 현재_라운드와_마지막_라운드_비교() {
+        //when
+        Round five = new Round("5");
+        //then
+        assertThat(five.isLessThan(4)).isTrue();
+        assertThat(five.isLessThan(5)).isFalse();
+        assertThat(five.isLessThan(6)).isFalse();
+    }
 }

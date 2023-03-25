@@ -14,4 +14,7 @@ public class Round {
         }
     }
 
+    public boolean isLessThan(int round) {
+        return this.round > round;
+    }
 }
