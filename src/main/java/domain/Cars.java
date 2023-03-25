@@ -20,23 +20,26 @@ public class Cars {
     }
 
     public List<String> winners() {
+        return getWinners(getMaxPosition());
+    }
 
-        Position maxPosition = new Position(0);
-        for (Car car : cars) {
-            Position position = car.getPosition();
-
-            if (maxPosition.isLessThan(car.getPosition())) {
-                maxPosition = position;
-            }
-        }
-
+    private List<String> getWinners(Position maxPosition) {
         List<String> winners = new ArrayList<>();
         for (Car car : cars) {
             if (car.isPosition(maxPosition)) {
                 winners.add(car.getName());
             }
         }
-
         return winners;
+    }
+
+    private Position getMaxPosition() {
+        Position maxPosition = new Position(0);
+        for (Car car : cars) {
+            if (car.isBiggerThan(maxPosition)) {
+                maxPosition = car.getPosition();
+            }
+        }
+        return maxPosition;
     }
 }

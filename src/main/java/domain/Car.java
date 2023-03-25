@@ -47,4 +47,11 @@ public class Car {
     public String getName() {
         return this.name.toString();
     }
+
+    public boolean isBiggerThan(Position position) {
+        if (position.isLessThan(this.position)) {
+            return true;
+        }
+        return false;
+    }
 }
